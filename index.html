@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JTNBTW6WNF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JTNBTW6WNF');
-</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -33,10 +24,14 @@
     <h1 class = "title">MAYFIELD HACKS</h1>
     <div class = "spacer"></div>
     <h2><a href="https://forms.gle/iJbNkG7X2DfFELz27" target="_blank">Register Here!</a></h2>
+    <section>
+        <h3>Registration Open For:</h3>
+        <div class= "countdown" id="timer"></div>
+    </section>
     <div class = "cover"><img src="Mayfield.jpg" width="700"></div>
     <h3>Hackathon / December 9th, 2023 / 10 Hours</h3>
     <div class="container"><div class="text-container"><span class="word"></span></div></div>      
-
+    
     <section id="about">
         <div class = "spacer"></div>
         <h2>About</h2>
@@ -53,6 +48,7 @@
     <section id="schedule">
         <div class = "big_Spacer"></div>
         <h2>Schedule</h2>
+        <h4>event activites, hour by hour</h3>
             <div class = "spacer"></div>
         <div class = "schedule">
             <h5 style="margin-left: -40px"class = "time">10:00 - 10:30</h5>
@@ -168,13 +164,28 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>If you have any questions or inquiries, please email us at <a href="mailto:MayFieldHacks@gmail.com">MayFieldHacks@gmail.com</a></p>
+        <p>If you have any questions or inquiries, please email us at <a href="mailto:info@example.com">info@example.com</a>.</p>
     </section>
 
     <footer>
         <p>&copy; 2023 MAYFIELD HACKS</p>
     </footer>
     <script>
+        const targetDate = new Date("2023-12-01").getTime();
+
+function updateTimer() {
+    const now = new Date().getTime();
+    const timeLeft = targetDate - now;
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(updateTimer, 1000);
         const words = ["Programming", "Hardware", "Games"]; // Array of words to cycle through
 let wordIndex = 0; // Index to keep track of the current word
 let letterIndex = 0; // Index to keep track of the current letter
